@@ -889,26 +889,53 @@
     filter: drop-shadow(0 2px 4px rgba(201,75,42,0.4));
   }
 
-  /* Ajuste da Imagem no Topo (Mobile) */
+  /* ══ MOBILE ADJUSTMENTS UNIFICADO ══ */
+@media (max-width: 900px) {
+    nav { padding: 14px 24px; }
+    .hamburger { display: flex; }
+    .nav-links {
+      display: none; position: absolute;
+      top: 100%; left: 0; right: 0;
+      background: rgba(251,247,240,0.98);
+      backdrop-filter: blur(16px);
+      flex-direction: column; padding: 1.5rem 2rem; gap: 1.2rem;
+      border-bottom: 2px solid rgba(201,75,42,0.15);
+    }
+    .nav-links.open { display: flex; }
+
+    /* Ajuste da Imagem no Topo (Mobile) */
     .hero-container { 
       flex-direction: column; 
       gap: 30px; 
+      display: flex;
     }
     
     .hero-right { 
-      display: flex !important; /* Força a imagem a aparecer */
-      order: -1; /* Coloca a foto acima do texto */
-      padding: 0;
+      display: flex !important; 
+      order: -1; 
       justify-content: center;
     }
     
     .hero-img-main {
       width: 100%;
-      max-width: 320px; /* Tamanho ideal para tela de celular */
+      max-width: 320px;
       height: auto;
       border-radius: 40px;
-      box-shadow: 0 20px 40px rgba(201,75,42,0.2);
     }
+
+    .hero-left { 
+      padding: 20px 24px 60px; 
+      text-align: center; 
+    }
+
+    /* Galeria & Photo Grid Mobile */
+    .photo-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .photo-item.jade-feat { grid-column: 1 / -1; min-height: 260px; }
+    
+    /* Serviços e Busca Leva */
+    .services-grid, .busca-leva { grid-template-columns: 1fr; }
+    .busca-leva { padding: 60px 24px; }
+} /* <--- ESSA CHAVE FECHA TUDO DO MOBILE. GARANTA QUE ELA ESTEJA AQUI */
   
     /* Busca & Leva */
     .busca-leva { grid-template-columns: 1fr; padding: 80px 24px; }
