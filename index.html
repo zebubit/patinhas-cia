@@ -987,11 +987,12 @@
       width: 100%;
       max-width: 340px;
       margin: 0 auto;
+      order: -1;
     }
     .busca-leva-img img {
       width: 100% !important;
-      height: auto !important;
-      max-height: 240px !important;
+      height: 220px !important;
+      max-height: 220px !important;
       object-fit: cover !important;
       border-radius: 20px;
     }
@@ -1001,6 +1002,7 @@
     }
     .busca-list { text-align: left; }
     .busca-list li { text-align: left; }
+    .busca-content { text-align: left; }
     .busca-content .section-sub { margin-bottom: 28px; }
 
     /* Galeria & Photo Grid - fotos menores para ver os pets */
@@ -1018,8 +1020,8 @@
     .photo-item.row2-col2, .photo-item.row2-col3,
     .photo-item.row3, .photo-item.duo, .photo-item.row4-last {
       grid-column: auto; grid-row: auto; 
-      min-height: 120px;
-      max-height: 140px;
+      min-height: 110px;
+      max-height: 130px;
     }
     .photo-item img { height: 100%; object-fit: cover; }
 
@@ -1172,7 +1174,8 @@
   transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
 .pet-card {
-  min-width: 280px;
+  width: 80vw;
+  max-width: 280px;
   height: 400px;
   border-radius: 24px;
   overflow: hidden;
