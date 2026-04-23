@@ -889,28 +889,27 @@
     filter: drop-shadow(0 2px 4px rgba(201,75,42,0.4));
   }
 
-  /* ══ MOBILE ADJUSTMENTS UNIFICADO ══ */
-  @media (max-width: 900px) {
-    /* Nav & Menu */
-    nav { padding: 14px 24px; }
-    .hamburger { display: flex; }
-    .nav-links {
-      display: none; position: absolute;
-      top: 100%; left: 0; right: 0;
-      background: rgba(251,247,240,0.98);
-      backdrop-filter: blur(16px);
-      flex-direction: column; padding: 1.5rem 2rem; gap: 1.2rem;
-      border-bottom: 2px solid rgba(201,75,42,0.15);
+  /* Ajuste da Imagem no Topo (Mobile) */
+    .hero-container { 
+      flex-direction: column; 
+      gap: 30px; 
     }
-    .nav-links.open { display: flex; }
-
-    /* Hero & Sections */
-    .hero { grid-template-columns: 1fr; }
-    .hero-right { display: none; }
-    .hero-left { padding: 60px 24px; }
-    section { padding: 64px 24px; }
-    .services-grid { grid-template-columns: 1fr; }
-
+    
+    .hero-right { 
+      display: flex !important; /* Força a imagem a aparecer */
+      order: -1; /* Coloca a foto acima do texto */
+      padding: 0;
+      justify-content: center;
+    }
+    
+    .hero-img-main {
+      width: 100%;
+      max-width: 320px; /* Tamanho ideal para tela de celular */
+      height: auto;
+      border-radius: 40px;
+      box-shadow: 0 20px 40px rgba(201,75,42,0.2);
+    }
+  
     /* Busca & Leva */
     .busca-leva { grid-template-columns: 1fr; padding: 80px 24px; }
     .busca-badge-van { right: 0; bottom: -16px; }
@@ -1232,7 +1231,7 @@
   </div>
   <div class="hero-right">
     <div class="hero-img-wrap">
-      <img class="hero-img-main" src="FOT.webp" alt="Jade — Patinhas & Cia">
+      <img class="hero-img-main" src="FOT.webp?v=2" alt="Cuidado especializado para seu pet — Patinhas & Cia">
       <div class="hero-float-card top-left">
         <div class="fc-emoji">🛁</div>
         <div>
