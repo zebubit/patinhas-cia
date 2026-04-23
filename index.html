@@ -937,48 +937,20 @@
     .busca-leva { padding: 60px 24px; }
 } /* <--- ESSA CHAVE FECHA TUDO DO MOBILE. GARANTA QUE ELA ESTEJA AQUI */
   
-    /* Busca & Leva */
-    .busca-leva { grid-template-columns: 1fr; padding: 80px 24px; }
-    .busca-badge-van { right: 0; bottom: -16px; }
-
-    /* Galeria & Photo Grid */
-    .photo-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
-    .photo-item.jade-feat { grid-column: 1 / -1; grid-row: auto; min-height: 260px; }
-    .photo-item.row1-col2, .photo-item.row1-col3,
-    .photo-item.row2-col2, .photo-item.row2-col3,
-    .photo-item.row3, .photo-item.duo, .photo-item.row4-last {
-      grid-column: auto; grid-row: auto; min-height: 200px;
-    }
-
-    /* Depoimentos & Contato */
-    .reviews-grid { grid-template-columns: 1fr; }
-    .contact-inner { grid-template-columns: 1fr; gap: 40px; }
-    
-    /* Interface & Floating Elements */
-    .fab-label { display: none; }
-    .fab { padding: 14px; }
-    .float-stack { right: 1rem; bottom: 1rem; }
-    #back-top { left: 1rem; bottom: 1rem; }
-    #toast { white-space: normal; text-align: center; max-width: 85vw; }
-
-    /* Footer */
-    .footer-top { flex-direction: column; gap: 24px; }
-    .photobook-header { flex-direction: column; gap: 24px; align-items: flex-start; }
-    footer { padding: 60px 24px 32px; }
-  }
-
-/* ── BUSCA & LEVA (Desktop) ── */
+    /* ── BUSCA & LEVA (Estilo Base / Desktop) ── */
 .busca-leva {
   background: var(--brand-dark);
   padding: 100px 80px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr; /* Aqui garante um ao lado do outro no PC */
   gap: 80px;
   align-items: center;
 }
+
 .busca-leva-img {
   position: relative;
 }
+
 .busca-leva-img img {
   width: 100%;
   border-radius: 24px;
@@ -988,6 +960,7 @@
   max-height: 480px;
   box-shadow: 0 32px 64px rgba(0,0,0,0.4);
 }
+
 .busca-badge-van {
   position: absolute;
   bottom: -20px;
@@ -1001,9 +974,11 @@
   line-height: 1.4;
   box-shadow: 0 12px 32px rgba(201,75,42,0.4);
 }
+
 .busca-content .section-tag { color: var(--brand-gold); }
 .busca-content .section-title { color: var(--brand-cream); }
 .busca-content .section-sub { color: rgba(245,239,224,0.7); margin-bottom: 40px; }
+
 .busca-list {
   list-style: none;
   margin-bottom: 40px;
@@ -1011,6 +986,7 @@
   flex-direction: column;
   gap: 16px;
 }
+
 .busca-list li {
   display: flex;
   align-items: flex-start;
@@ -1019,16 +995,33 @@
   color: rgba(245,239,224,0.9);
   line-height: 1.5;
 }
+
 .busca-list li .bl-icon {
   font-size: 1.4rem;
   flex-shrink: 0;
   margin-top: 1px;
 }
-@media(max-width:900px){
-  .busca-leva { grid-template-columns: 1fr; padding: 80px 24px; }
-  .busca-badge-van { right: 0; bottom: -16px; }
-}
 
+/* ── AJUSTES PARA CELULAR (Tudo o que muda no mobile fica aqui dentro) ── */
+@media (max-width: 900px) {
+  .busca-leva { 
+    grid-template-columns: 1fr; /* No celular fica um abaixo do outro */
+    padding: 80px 24px; 
+    text-align: center;
+  }
+  
+  .busca-badge-van { 
+    right: 0; 
+    bottom: -16px; 
+  }
+  
+  .busca-list li {
+    text-align: left; /* Mantém os itens da lista alinhados à esquerda para ler melhor */
+  }
+
+  .footer-top { flex-direction: column; gap: 24px; }
+  footer { padding: 60px 24px 32px; }
+}
 /* ── EXPERT SECTION ── */
 .expert { background: var(--brand-light); padding: 120px 80px; }
 .expert-inner { 
